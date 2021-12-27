@@ -1,0 +1,1823 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "workSchedulesMetaType",
+  "type": "object",
+  "description": "Collection of the work schedules applicable to a single employee or multiple team members - Meta",
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "description": "workSchedules meta schema for - workSchedules_schema_v01_00_rev005.json",
+      "type": "object",
+      "title": "workSchedulesMeta",
+      "additionalProperties": false,
+      "properties": {
+        "queryCriteria": {
+          "description": "A collection of query criteria",
+          "type": "array",
+          "additionalProperties": false,
+          "items": {
+            "title": "workSchedulesQueryCriterion",
+            "description": "A single query parameter",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "queryOptionCode": {
+                "description": "A code identifying the supported query option",
+                "$ref": "#/definitions/simpleCodeType_v02"
+              },
+              "obligationCode": {
+                "description": "A Code identifying whether the parameter is required, optional, conditional",
+                "$ref": "#/definitions/simpleCodeType_v02"
+              },
+              "queryOptionTypeCode": {
+                "description": "A Code identifying the type of option.  Examples are standard, OData, clientCustom, userCustom",
+                "$ref": "#/definitions/simpleCodeType_v02"
+              },
+              "defaultNumberValue": {
+                "description": "The default number value",
+                "type": "number"
+              },
+              "defaultStringValue": {
+                "description": "The default string value",
+                "type": "string"
+              },
+              "resourcePathMax": {
+                "description": "Maximum number of resource paths supported",
+                "type": "integer"
+              },
+              "pattern": {
+                "description": "Indicates a regular expression on the required pattern for the value",
+                "type": "string"
+              },
+              "resourcePaths": {
+                "description": "A collection of acceptable resource paths to pass to the query option",
+                "type": "array",
+                "additionalProperties": false,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "excludedResourcePaths": {
+                "description": "A collection of resource paths which may not be passed to the query option.  An example use of this is where you allow all paths except 1 or 2.  You would want to only specify those which are excluded",
+                "type": "array",
+                "additionalProperties": false,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "queryValueCodeList": {
+                "description": "A reference to the codeList which returns the possible values for the query option",
+                "$ref": "#/definitions/codeListType_v03"
+              },
+              "logicalOperators": {
+                "description": "A collection of logical operators",
+                "type": "array",
+                "additionalProperties": false,
+                "items": {
+                  "description": "A logical operation",
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "logicalOperatorCode": {
+                      "description": "A coded identifying the supported query options",
+                      "$ref": "#/definitions/simpleCodeType_v02"
+                    },
+                    "mutuallyExclusiveIndicator": {
+                      "description": "The URI of the related entity",
+                      "$ref": "#/definitions/indicatorType_v01"
+                    },
+                    "mutuallyExclusiveLogicalOperatorCodes": {
+                      "description": "A list of mutually exclusive operator codes.",
+                      "type": "array",
+                      "items": {
+                        "description": "Mutually exclusive logical operator code.",
+                        "title": "MutuallyExclusiveLogicalOperatorCode",
+                        "$ref": "#/definitions/simpleCodeType_v02",
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                }
+              },
+              "itemID": {
+                "description": "The unique identifier of the array.",
+                "$ref": "#/definitions/itemIDType_v01"
+              }
+            }
+          }
+        },
+        "/workSchedules": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/itemID": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleID": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/associateOID": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/workerName": {
+          "$ref": "#/definitions/objectType"
+        },
+        "/workSchedules/workerName/givenName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/workerName/middleName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/workerName/familyName1": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/workerName/familyName2": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/workerName/formattedName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/workAssignmentID": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/clockReferenceDateTime": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/schedulePeriod": {
+          "$ref": "#/definitions/objectType"
+        },
+        "/workSchedules/schedulePeriod/startDate": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/schedulePeriod/endDate": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/scheduleDays/itemID": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/daySequenceNumber": {
+          "$ref": "#/definitions/numberType"
+        },
+        "/workSchedules/scheduleDays/dayOfWeekCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/dayOfWeekCode/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/dayOfWeekCode/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/dayOfWeekCode/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleDayDate": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryTypeCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryTypeCode/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryTypeCode/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryTypeCode/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/payCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/payCode/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/payCode/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/payCode/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryStatusCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryStatusCode/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryStatusCode/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryStatusCode/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryStatusCode/effectiveDate": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/dateTimePeriod": {
+          "$ref": "#/definitions/objectType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/dateTimePeriod/startDateTime": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/dateTimePeriod/endDateTime": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/datePeriod": {
+          "$ref": "#/definitions/objectType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/datePeriod/startDate": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/datePeriod/startTime": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/datePeriod/endDate": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/datePeriod/endTime": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/totalQuantity": {
+          "$ref": "#/definitions/objectType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/totalQuantity/quantityValue": {
+          "$ref": "#/definitions/numberType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/totalQuantity/unitTimeCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/totalQuantity/unitTimeCode/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/totalQuantity/unitTimeCode/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/totalQuantity/unitTimeCode/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/totalTime": {
+          "$ref": "#/definitions/objectType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/totalTime/timeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/totalTime/nameCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/totalTime/nameCode/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/totalTime/nameCode/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/totalTime/nameCode/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/durationTypeCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/durationTypeCode/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/durationTypeCode/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/durationTypeCode/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/categoryTypeCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/categoryTypeCode/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/categoryTypeCode/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/categoryTypeCode/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/dayPeriodCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/dayPeriodCode/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/dayPeriodCode/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/dayPeriodCode/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/shiftTypeCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/shiftTypeCode/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/shiftTypeCode/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/shiftTypeCode/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/duration": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/earningAllocations": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/earningAllocations/allocationCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/earningAllocations/allocationCode/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/earningAllocations/allocationCode/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/earningAllocations/allocationCode/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/earningAllocations/allocationTypeCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/earningAllocations/allocationTypeCode/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/earningAllocations/allocationTypeCode/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/earningAllocations/allocationTypeCode/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/earningAllocations/itemID": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryComments": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryComments/textValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryComments/commentTypeCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryComments/commentTypeCode/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryComments/commentTypeCode/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryComments/commentTypeCode/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryComments/appliesToCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryComments/appliesToCode/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryComments/appliesToCode/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryComments/appliesToCode/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryComments/privateIndicator": {
+          "$ref": "#/definitions/booleanType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryComments/itemID": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/scheduleEntryID": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/shiftGroupID": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/overrideWholeShiftIndicator": {
+          "$ref": "#/definitions/booleanType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/overridePartialShiftIndicator": {
+          "$ref": "#/definitions/booleanType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/operationID": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/canonicalUri": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/actionTypeCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/confirmationRequiredIndicator": {
+          "$ref": "#/definitions/booleanType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/commentAllowedIndicator": {
+          "$ref": "#/definitions/booleanType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/defaultIndicator": {
+          "$ref": "#/definitions/booleanType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/sequence": {
+          "$ref": "#/definitions/numberType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/attestation": {
+          "$ref": "#/definitions/objectType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/attestation/actionBlockIndicator": {
+          "$ref": "#/definitions/booleanType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/attestation/messageTxt": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/attestation/messageUri": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/links": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/links/href": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/links/rel": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/links/canonicalUri": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/links/title": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/links/targetSchema": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/links/mediaType": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/links/method": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/links/encType": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/links/schema": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/links/payLoadArguments": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/links/payLoadArguments/argumentPath": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/actions/links/payLoadArguments/argumentValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/payCodeCategory": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/payCodeCategory/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/payCodeCategory/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/payCodeCategory/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryTags": {
+          "$ref": "#/definitions/objectType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryTags/tagCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryTags/tagType": {
+          "$ref": "#/definitions/objectType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryTags/tagType/dataTypeCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryTags/tagType/currencyCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryTags/tagType/formatCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduleEntries/entryTags/tagValues": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/scheduleDays/scheduledHours": {
+          "$ref": "#/definitions/objectType"
+        },
+        "/workSchedules/scheduleDays/scheduledHours/hoursQuantity": {
+          "$ref": "#/definitions/numberType"
+        },
+        "/workSchedules/scheduleDays/scheduledHours/unitCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/scheduledHours/unitCode/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduledHours/unitCode/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/scheduledHours/unitCode/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/appliedTempateID": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/actions": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/scheduleDays/actions/operationID": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/actions/canonicalUri": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/actions/actionTypeCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduleDays/actions/confirmationRequiredIndicator": {
+          "$ref": "#/definitions/booleanType"
+        },
+        "/workSchedules/scheduleDays/actions/commentAllowedIndicator": {
+          "$ref": "#/definitions/booleanType"
+        },
+        "/workSchedules/scheduleDays/actions/defaultIndicator": {
+          "$ref": "#/definitions/booleanType"
+        },
+        "/workSchedules/scheduleDays/actions/sequence": {
+          "$ref": "#/definitions/numberType"
+        },
+        "/workSchedules/scheduleDays/actions/attestation": {
+          "$ref": "#/definitions/objectType"
+        },
+        "/workSchedules/scheduleDays/actions/attestation/actionBlockIndicator": {
+          "$ref": "#/definitions/booleanType"
+        },
+        "/workSchedules/scheduleDays/actions/attestation/messageTxt": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/actions/attestation/messageUri": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/actions/links": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/scheduleDays/actions/links/href": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/actions/links/rel": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/actions/links/canonicalUri": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/actions/links/title": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/actions/links/targetSchema": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/actions/links/mediaType": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/actions/links/method": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/actions/links/encType": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/actions/links/schema": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/actions/links/payLoadArguments": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/scheduleDays/actions/links/payLoadArguments/argumentPath": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduleDays/actions/links/payLoadArguments/argumentValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduledHours": {
+          "$ref": "#/definitions/objectType"
+        },
+        "/workSchedules/scheduledHours/hoursQuantity": {
+          "$ref": "#/definitions/numberType"
+        },
+        "/workSchedules/scheduledHours/unitCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/scheduledHours/unitCode/codeValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduledHours/unitCode/shortName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/scheduledHours/unitCode/longName": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/appliedTemplateID": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/actions": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/actions/operationID": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/actions/canonicalUri": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/actions/actionTypeCode": {
+          "$ref": "#/definitions/stringCodeListType"
+        },
+        "/workSchedules/actions/confirmationRequiredIndicator": {
+          "$ref": "#/definitions/booleanType"
+        },
+        "/workSchedules/actions/commentAllowedIndicator": {
+          "$ref": "#/definitions/booleanType"
+        },
+        "/workSchedules/actions/defaultIndicator": {
+          "$ref": "#/definitions/booleanType"
+        },
+        "/workSchedules/actions/sequence": {
+          "$ref": "#/definitions/numberType"
+        },
+        "/workSchedules/actions/attestation": {
+          "$ref": "#/definitions/objectType"
+        },
+        "/workSchedules/actions/attestation/actionBlockIndicator": {
+          "$ref": "#/definitions/booleanType"
+        },
+        "/workSchedules/actions/attestation/messageTxt": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/actions/attestation/messageUri": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/actions/links": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/actions/links/href": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/actions/links/rel": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/actions/links/canonicalUri": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/actions/links/title": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/actions/links/targetSchema": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/actions/links/mediaType": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/actions/links/method": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/actions/links/encType": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/actions/links/schema": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/actions/links/payLoadArguments": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/actions/links/payLoadArguments/argumentPath": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/actions/links/payLoadArguments/argumentValue": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/links": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/links/href": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/links/rel": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/links/canonicalUri": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/links/title": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/links/targetSchema": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/links/mediaType": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/links/method": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/links/encType": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/links/schema": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/links/payLoadArguments": {
+          "$ref": "#/definitions/arrayType"
+        },
+        "/workSchedules/links/payLoadArguments/argumentPath": {
+          "$ref": "#/definitions/stringType"
+        },
+        "/workSchedules/links/payLoadArguments/argumentValue": {
+          "$ref": "#/definitions/stringType"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "simpleCodeType_v02": {
+      "description": "A simple (string) code.  Can have a code list reference",
+      "type": "string"
+    },
+    "codeListType_v03": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "codeListTitle": {
+          "description": "Code list title",
+          "type": "string"
+        },
+        "exclusiveIndicator": {
+          "description": "False indicates that the user may enter their own value for the code.  That is, the codeList is supported and extensions are also supported.  True means that only the codeList values are supported. If value is false then the UI will allow a dialog box for the shortName.  The system will generate a key (codeValue) for the user entered value.  The system would need to manage these user defined values.",
+          "$ref": "#/definitions/indicatorType_v01",
+          "default": true
+        },
+        "listItems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/codeListItemType_v02"
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/linkType_v02"
+          }
+        }
+      }
+    },
+    "indicatorType_v01": {
+      "description": "Boolean expression",
+      "type": "boolean"
+    },
+    "codeListItemType_v02": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "codeValue": {
+          "description": "The code for the related entity",
+          "type": "string"
+        },
+        "shortName": {
+          "description": "Short description of the related code",
+          "type": "string"
+        },
+        "longName": {
+          "description": "Long description of the related code",
+          "type": "string"
+        },
+        "itemID": {
+          "description": "Unique identifier of an item in the collection",
+          "$ref": "#/definitions/itemIDType_v01"
+        },
+        "valueDescription": {
+          "description": "Additional list item description",
+          "type": "string"
+        },
+        "foreignKey": {
+          "description": "Allows for filtering the code list",
+          "type": "string"
+        },
+        "inactiveIndicator": {
+          "description": "Indicates if the current item is inactive.  The code is considered 'active' if the value is 'false' or the entire field is omitted",
+          "$ref": "#/definitions/indicatorType_v01"
+        },
+        "defaultIndicator": {
+          "description": "Indicates if the current value is a default (pre-selected)",
+          "$ref": "#/definitions/indicatorType_v01"
+        }
+      }
+    },
+    "itemIDType_v01": {
+      "description": "The unique identifier of the object in a collection",
+      "$ref": "#/definitions/simpleIDType_v02"
+    },
+    "simpleIDType_v02": {
+      "description": "The simple (string) identifier of an object",
+      "type": "string"
+    },
+    "linkType_v02": {
+      "description": "A link description object is used to describe link relations.  In the context of a schema, it defines the link relations of the instances of the schema, and can be parameterized by the instance values.  The link description format can be used on its own in regular (non-schema documents), and use of this format can be declared by referencing the normative link description schema as the the schema for the data structure that uses the links",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "href": {
+          "$ref": "#/definitions/URIType_v01"
+        },
+        "rel": {
+          "description": "Indicates the nature of the relationship of the related resource to the resource that generated this representation",
+          "type": "string",
+          "enum": [
+            "alternate",
+            "create",
+            "canonical",
+            "describedby",
+            "edit-form",
+            "enclosure",
+            "full",
+            "related",
+            "root",
+            "self",
+            "up",
+            "search",
+            "first",
+            "last",
+            "next",
+            "previous",
+            "/adp/invoke",
+            "/adp/image",
+            "/adp/confirm-message",
+            "/adp/status-monitor",
+            "/adp/codelist",
+            "/adp/template",
+            "/adp/externalLink",
+            "/adp/validation",
+            "/adp/deeplink",
+            "/adp/attachment",
+            "/adp/workflow"
+          ]
+        },
+        "canonicalUri": {
+          "description": "A unique identifier of the feature/function/operation, the link poins to",
+          "$ref": "#/definitions/URIType_v01"
+        },
+        "title": {
+          "description": "This property defines a title for the link.  The value must be a string. User agents MAY use this title when presenting the link to the user",
+          "type": "string"
+        },
+        "targetSchema": {
+          "description": "This property is a schema that defines the expected structure of the JSON representation of the target of the link, if the target of the link is returned using JSON representation",
+          "type": "string"
+        },
+        "mediaType": {
+          "description": "The media type that the linked resource will return (Response)",
+          "type": "string",
+          "enum": [
+            "application/gzip",
+            "application/json",
+            "application/msword",
+            "application/pdf",
+            "application/postscript",
+            "application/vnd.ms-excel",
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "application/xml",
+            "application/x-www-form-urlencoded",
+            "image/gif",
+            "image/jpeg",
+            "image/png",
+            "image/tiff",
+            "multipart/mixed",
+            "text/html",
+            "text/plain",
+            "application/vnd.visio",
+            "image/bmp",
+            "image/x-ms-bmp",
+            "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+            "application/vnd.ms-powerpoint",
+            "video/mp4",
+            "audio/mpeg",
+            "video/x-msvideo",
+            "video/x-ms-wmv",
+            "application/rtf",
+            "application/vnd.ms-outlook",
+            "text/csv",
+            "video/quicktime",
+            "application/zip",
+            "application/illustrator",
+            "text/xml"
+          ]
+        },
+        "method": {
+          "description": "The HTTP method code (HTTP Verb) traverse the link (GET, POST, PUT or DELETE)",
+          "type": "string",
+          "enum": [
+            "GET",
+            "POST",
+            "DELETE",
+            "PUT"
+          ]
+        },
+        "encType": {
+          "description": "If present, this property indicates a query media type format that the server supports for querying or posting to the collection of instances at the target resource.  The query can be suffixed to the target URI to query the collection with property-based constraints on the resources that SHOULD be returned from the server or used to post data to the resource (depending on the method). (Request)",
+          "type": "string",
+          "enum": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+          ]
+        },
+        "schema": {
+          "description": "This property contains a schema which defines the acceptable structure of the submitted request.  For a GET request, this schema would define the properties for the query string and for a POST request, this would define the body",
+          "type": "string"
+        },
+        "payLoadArguments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "argumentPath": {
+                "description": "Code value (typically a key field) of the code list item",
+                "type": "string"
+              },
+              "argumentValue": {
+                "description": "Code value (typically a key field) of the code list item",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "URIType_v01": {
+      "description": "The URI of the related entity",
+      "type": "string",
+      "format": "uri"
+    },
+    "arrayType": {
+      "type": "object",
+      "properties": {
+        "minItems": {
+          "description": "Indicates the minimum items required for an array type.  This is only relevant if the given property is an array.",
+          "type": "integer"
+        },
+        "maxItems": {
+          "description": "Indicates the maximum items supported for an array type.  This is only relevant if the given property is an array.",
+          "type": "integer"
+        },
+        "sameValueProperties": {
+          "description": "A list of properties which must have the exact same value within the array",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "uniqueProperties": {
+          "description": "A list of properties which together must be unique",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "uniqueItems": {
+          "description": "True indicates that the entire item must be unique within the array",
+          "$ref": "#/definitions/indicatorType"
+        },
+        "dependencies": {
+          "$ref": "#/definitions/dependencyListType"
+        },
+        "helperMessage": {
+          "$ref": "#/definitions/helperMessageType"
+        },
+        "dataType": {
+          "description": "Data type of the attribute",
+          "$ref": "#/definitions/metaDataType"
+        },
+        "dependencyLinks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/linkType_v02"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "indicatorType": {
+      "type": "boolean"
+    },
+    "dependencyListType": {
+      "description": "List conditional dependencies of supported properties (readOnly, pattern, hidden, disallow etc.) of an attribute or an object. Dependencies can be defined using oneOf (OR) / allOf (AND) object. oneOf - successful if one of the conditions satisfies, allOf - successful if all the conditions satisfies. Refer API specification for dependencies context object syntax and rules. Dependencies context cannot be validated against context schema if dependencies is defined context JSON, because the dependencies JSON structure is dynamically defined for attributes and the not defined in the context schema. Attribute level properties and dependencies properties are mutually exclusive, example - readOnly property can be set either at attribute level or inside dependencies. If both hidden and disallow properties are set inside dependencies or at attribute level, hidden property takes precedence.",
+      "type": "object"
+    },
+    "helperMessageType": {
+      "title": "helperMessageType",
+      "description": "Helper text provided to the user when they take an action to affirm to be correct, true, or genuine.",
+      "type": "object",
+      "properties": {
+        "messageTxt": {
+          "description": "Message to present to the user.",
+          "type": "string"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/linkType_v02"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "linkType": {
+      "title": "linkType",
+      "description": "A link description object is used to describe link relations.  In the context of a schema, it defines the link relations of the instances of the schema, and can be parameterized by the instance values.  The link description format can be used on its own in regular (non-schema documents), and use of this format can be declared by referencing the normative link description schema as the the schema for the data structure that uses the links",
+      "type": "object",
+      "properties": {
+        "canonicalUri": {
+          "$ref": "#/definitions/uriType"
+        },
+        "href": {
+          "$ref": "#/definitions/uriType"
+        },
+        "rel": {
+          "description": "Indicates the nature of the relationship of the related resource to the resource that generated this representation",
+          "type": "string",
+          "enum": [
+            "alternate",
+            "create",
+            "canonical",
+            "describedby",
+            "edit-form",
+            "enclosure",
+            "full",
+            "related",
+            "root",
+            "self",
+            "up",
+            "search",
+            "first",
+            "last",
+            "next",
+            "previous",
+            "/adp/invoke",
+            "/adp/image",
+            "/adp/confirm-message",
+            "/adp/status-monitor",
+            "/adp/codelist",
+            "/adp/template",
+            "/adp/externalLink",
+            "/adp/validation",
+            "/adp/deeplink",
+            "/adp/attachment"
+          ]
+        },
+        "title": {
+          "description": "This property defines a title for the link.  The value must be a string. User agents MAY use this title when presenting the link to the user.",
+          "type": "string"
+        },
+        "mediaType": {
+          "description": "The media type that the linked resource will return (Response)",
+          "type": "string",
+          "enum": [
+            "application/gzip",
+            "application/json",
+            "application/msword",
+            "application/pdf",
+            "application/postscript",
+            "application/vnd.ms-excel",
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "application/xml",
+            "application/x-www-form-urlencoded",
+            "image/gif",
+            "image/jpeg",
+            "image/png",
+            "image/tiff",
+            "multipart/mixed",
+            "text/html",
+            "text/plain",
+            "application/vnd.visio",
+            "image/bmp",
+            "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+            "application/vnd.ms-powerpoint",
+            "video/mp4",
+            "audio/mpeg",
+            "video/x-msvideo",
+            "video/x-ms-wmv",
+            "application/rtf",
+            "application/vnd.ms-outlook",
+            "text/csv",
+            "video/quicktime",
+            "application/zip",
+            "application/illustrator",
+            "text/xml"
+          ]
+        },
+        "method": {
+          "$ref": "#/definitions/httpMethodType"
+        },
+        "payloadArguments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/argumentType"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "uriType": {
+      "title": "uriType",
+      "type": "string",
+      "format": "uri"
+    },
+    "httpMethodType": {
+      "title": "httpMethodType",
+      "description": "Simple (string) code identifying the http method used to invoke the API",
+      "type": "string",
+      "enum": [
+        "GET",
+        "POST",
+        "DELETE",
+        "PUT",
+        "PATCH"
+      ]
+    },
+    "argumentType": {
+      "title": "argumentType",
+      "type": "object",
+      "properties": {
+        "argumentName": {
+          "description": "Argument name to be passed in",
+          "type": "string"
+        },
+        "argumentPath": {
+          "description": "The path of the argument to be passed in",
+          "type": "string"
+        },
+        "argumentValue": {
+          "description": "The value of the argument name to be passed in",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "metaDataType": {
+      "type": "string",
+      "enum": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "object",
+        "array",
+        "null",
+        "any",
+        "string[date-time]",
+        "string[date]",
+        "string[time]",
+        "string[duration]",
+        "string[regex]",
+        "string[phone]",
+        "string[uri]",
+        "string[email]",
+        "string[ip-address]",
+        "string[ipv6]",
+        "string[host-name]",
+        "integer[regex]",
+        "integer[utc-millisec]",
+        "number[regex]",
+        "number[utc-millisec]"
+      ]
+    },
+    "stringType": {
+      "type": "object",
+      "properties": {
+        "readOnly": {
+          "description": "True indicates that the property is marked read only in the given context",
+          "$ref": "#/definitions/indicatorType",
+          "default": false
+        },
+        "optional": {
+          "description": "True indicates that this property does not need to be valued",
+          "$ref": "#/definitions/indicatorType",
+          "default": false
+        },
+        "hidden": {
+          "description": "True indicates that the property is carried in the message - to and from the System of Record, but is not exposed in the UI",
+          "$ref": "#/definitions/indicatorType",
+          "default": false
+        },
+        "sequence": {
+          "description": "A number which provides the sequence that this property should be presented in relation to other properties.",
+          "$ref": "#/definitions/sequenceType"
+        },
+        "disallow": {
+          "description": "Specified on a target property.  If the passed conditions are true then this property is disallowed and therefore, not presented to a user.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/disallowItemType"
+          }
+        },
+        "shortLabelName": {
+          "description": "Provides a client defined UI label for the property which is less than an average of 20 characters in length.",
+          "type": "string"
+        },
+        "longLabelName": {
+          "description": "Provides a client defined UI long label for the property.",
+          "type": "string"
+        },
+        "minLength": {
+          "description": "Indicates the minimum length required for a property.",
+          "type": "integer"
+        },
+        "maxLength": {
+          "description": "Indicates the maximum length supported for a property",
+          "type": "integer"
+        },
+        "default": {
+          "description": "Indicates the default value which should be populated by default",
+          "type": "string"
+        },
+        "pattern": {
+          "description": "Indicates a regular expression on the required pattern for the value",
+          "type": "string"
+        },
+        "masking": {
+          "description": "A reference to the masking rules",
+          "$ref": "#/definitions/maskingRuleType"
+        },
+        "equals": {
+          "description": "Provides 1 to many properties which the value of this property must be equal to.  If the property is equal to any of the value of the properties then the validation is successful.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "greaterThan": {
+          "description": "The value of the related property must be greater than the value of  all the given properties in the array.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "lessThan": {
+          "description": "The value of the related property must be less than the value of all the given properties in the array.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dependencies": {
+          "$ref": "#/definitions/dependencyListType"
+        },
+        "helperMessage": {
+          "$ref": "#/definitions/helperMessageType"
+        },
+        "dataType": {
+          "description": "Data type of the attribute",
+          "$ref": "#/definitions/metaDataType"
+        },
+        "valueSet": {
+          "$ref": "#/definitions/valueSetType"
+        },
+        "dependencyLinks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/linkType_v02"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "sequenceType": {
+      "title": "sequenceType",
+      "type": "integer"
+    },
+    "disallowItemType": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "itemID": {
+          "$ref": "#/definitions/itemIDType"
+        }
+      }
+    },
+    "itemIDType": {
+      "title": "itemIDType",
+      "description": "A unique identifier of an object within the collection",
+      "type": "string"
+    },
+    "maskingRuleType": {
+      "type": "object",
+      "properties": {
+        "authorizationRequiredIndicator": {
+          "$ref": "#/definitions/indicatorType"
+        },
+        "authorizationResourceID": {
+          "$ref": "#/definitions/simpleIDType"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/linkType_v02"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "simpleIDType": {
+      "title": "simpleIDType",
+      "type": "string"
+    },
+    "valueSetType": {
+      "title": "valueSetType",
+      "description": "A reference to the codelist extended with values",
+      "type": "object",
+      "properties": {
+        "meta": {
+          "title": "ValueSetMeta",
+          "type": "object",
+          "properties": {
+            "idValuePath": {
+              "description": "Code value (typically a key field) of the code list item",
+              "type": "string"
+            },
+            "itemDescriptionPath": {
+              "description": "Short name field of the code list item",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "valueSetListItems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/valueSetItemType"
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/linkType_v02"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "valueSetItemType": {
+      "title": "valueSetItemType",
+      "description": "The value set item type",
+      "type": "object",
+      "properties": {
+        "idValue": {
+          "description": "The code for the related entity",
+          "type": "string"
+        },
+        "itemDescription": {
+          "description": "Short description of the related code",
+          "type": "string"
+        },
+        "defaultIndicator": {
+          "description": "Indicates if the current value is a default (pre-selected)",
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "objectType": {
+      "type": "object",
+      "properties": {
+        "readOnly": {
+          "description": "True indicates that the property is marked read only in the given context",
+          "type": "boolean",
+          "default": false
+        },
+        "optional": {
+          "description": "True indicates that this property does not need to be valued",
+          "type": "boolean",
+          "default": true
+        },
+        "hidden": {
+          "description": "True indicates that the property is carried in the message - to and from the System of Record, but is not exposed in the UI",
+          "type": "boolean",
+          "default": false
+        },
+        "sequence": {
+          "description": "A number which provides the sequence that this property should be presented in relation to other properties.",
+          "$ref": "#/definitions/sequenceType"
+        },
+        "disallow": {
+          "description": "Specified on a target property.  If the passed conditions are true then this property is disallowed and therefore, not presented to a user.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/disallowItemType"
+          }
+        },
+        "dependencies": {
+          "$ref": "#/definitions/dependencyListType"
+        },
+        "helperMessage": {
+          "$ref": "#/definitions/helperMessageType"
+        },
+        "dataType": {
+          "description": "Data type of the attribute",
+          "$ref": "#/definitions/metaDataType"
+        },
+        "dependencyLinks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/linkType_v02"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "numberType": {
+      "type": "object",
+      "properties": {
+        "readOnly": {
+          "description": "True indicates that the property is marked read only in the given context",
+          "type": "boolean",
+          "default": false
+        },
+        "optional": {
+          "description": "True indicates that this property does not need to be valued",
+          "type": "boolean",
+          "default": false
+        },
+        "hidden": {
+          "description": "True indicates that the property is carried in the message - to and from the System of Record, but is not exposed in the UI",
+          "type": "boolean",
+          "default": false
+        },
+        "sequence": {
+          "description": "A number which provides the sequence that this property should be presented in relation to other properties.",
+          "$ref": "#/definitions/sequenceType"
+        },
+        "disallow": {
+          "description": "Specified on a target property.  If the passed conditions are true then this property is disallowed and therefore, not presented to a user.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/disallowItemType"
+          }
+        },
+        "shortLabelName": {
+          "description": "Provides a client defined UI label for the property which is less than an average of 20 characters in length.",
+          "type": "string"
+        },
+        "longLabelName": {
+          "description": "Provides a client defined UI long label for the property.",
+          "type": "string"
+        },
+        "minLength": {
+          "description": "Indicates the minimum length required for a property.",
+          "type": "integer"
+        },
+        "maxLength": {
+          "description": "Indicates the maximum length supported for a property",
+          "type": "integer"
+        },
+        "minValue": {
+          "description": "Indicates the minimum value required for a property.",
+          "type": "number"
+        },
+        "maxValue": {
+          "description": "Indicates the maximum value supported for a property",
+          "type": "number"
+        },
+        "multipleOf": {
+          "description": "Indicates that the value must be a multiple of this value or divisible by this value.",
+          "type": "number"
+        },
+        "default": {
+          "description": "Indicates the default value which should be populated by default",
+          "type": "number"
+        },
+        "pattern": {
+          "description": "Indicates a regular expression on the required pattern for the value",
+          "type": "string"
+        },
+        "masking": {
+          "description": "A reference to the masking rules",
+          "$ref": "#/definitions/maskingRuleType"
+        },
+        "equals": {
+          "description": "Provides 1 to many properties which the value of this property must be equal to.  If the property is equal to any of the value of the properties then the validation is successful.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "greaterThan": {
+          "description": "The value of the related property must be greater than the value of  all the given properties in the array.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "lessThan": {
+          "description": "The value of the related property must be less than the value of all the given properties in the array.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dependencies": {
+          "$ref": "#/definitions/dependencyListType"
+        },
+        "helperMessage": {
+          "$ref": "#/definitions/helperMessageType"
+        },
+        "dataType": {
+          "description": "Data type of the attribute",
+          "$ref": "#/definitions/metaDataType"
+        },
+        "dependencyLinks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/linkType_v02"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "stringCodeListType": {
+      "type": "object",
+      "properties": {
+        "codeList": {
+          "description": "A reference to the codeList",
+          "$ref": "#/definitions/codeListType_v03"
+        },
+        "readOnly": {
+          "description": "True indicates that the property is marked read only in the given context",
+          "$ref": "#/definitions/indicatorType",
+          "default": false
+        },
+        "optional": {
+          "description": "True indicates that this property does not need to be valued",
+          "$ref": "#/definitions/indicatorType",
+          "default": false
+        },
+        "hidden": {
+          "description": "True indicates that the property is carried in the message - to and from the System of Record, but is not exposed in the UI",
+          "$ref": "#/definitions/indicatorType",
+          "default": false
+        },
+        "sequence": {
+          "description": "A number which provides the sequence that this property should be presented in relation to other properties.",
+          "$ref": "#/definitions/sequenceType"
+        },
+        "disallow": {
+          "description": "Specified on a target property.  If the passed conditions are true then this property is disallowed and therefore, not presented to a user.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/disallowItemType"
+          }
+        },
+        "shortLabelName": {
+          "description": "Provides a client defined UI label for the property which is less than an average of 20 characters in length.",
+          "type": "string"
+        },
+        "longLabelName": {
+          "description": "Provides a client defined UI long label for the property.",
+          "type": "string"
+        },
+        "minLength": {
+          "description": "Indicates the minimum length required for a property.",
+          "type": "integer"
+        },
+        "maxLength": {
+          "description": "Indicates the maximum length supported for a property",
+          "type": "integer"
+        },
+        "default": {
+          "description": "Indicates the default value which should be populated by default",
+          "type": "string"
+        },
+        "pattern": {
+          "description": "Indicates a regular expression on the required pattern for the value",
+          "type": "string"
+        },
+        "masking": {
+          "description": "A reference to the masking rules",
+          "$ref": "#/definitions/maskingRuleType"
+        },
+        "equals": {
+          "description": "Provides 1 to many properties which the value of this property must be equal to.  If the property is equal to any of the value of the properties then the validation is successful.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "greaterThan": {
+          "description": "The value of the related property must be greater than the value of  all the given properties in the array.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "lessThan": {
+          "description": "The value of the related property must be less than the value of all the given properties in the array.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dependencies": {
+          "$ref": "#/definitions/dependencyListType"
+        },
+        "helperMessage": {
+          "$ref": "#/definitions/helperMessageType"
+        },
+        "dataType": {
+          "description": "Data type of the attribute",
+          "$ref": "#/definitions/metaDataType"
+        },
+        "valueSet": {
+          "$ref": "#/definitions/valueSetType"
+        },
+        "dependencyLinks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/linkType_v02"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "codeListType": {
+      "title": "codeListType",
+      "type": "object",
+      "properties": {
+        "codeListTitle": {
+          "description": "Code list title",
+          "type": "string"
+        },
+        "exclusiveIndicator": {
+          "description": "False indicates that the user may enter their own value for the code.  That is, the codeList is supported and extensions are also supported.  True means that only the codeList values are supported. If value is false then the UI will allow a dialog box for the shortName.  The system will generate a key (codeValue) for the user entered value.  The system would need to manage these user defined values.",
+          "$ref": "#/definitions/indicatorType",
+          "default": true
+        },
+        "listItems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/codeListItemType"
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/linkType_v02"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "codeListItemType": {
+      "title": "codeListType",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "The code value for the related entity",
+          "type": "string"
+        },
+        "name": {
+          "description": "The code name for description of the related code",
+          "type": "string"
+        },
+        "valueDescription": {
+          "description": "Additional list item description",
+          "type": "string"
+        },
+        "valuePattern": {
+          "description": "Allows for specifying the pattern (regex) for validating the list values",
+          "type": "string"
+        },
+        "filter": {
+          "description": "Allows for filtering the code list",
+          "type": "string"
+        },
+        "inactiveIndicator": {
+          "description": "Indicates if the current item is inactive.  The code is considered 'active' if the value is 'false' or the entire field is omitted",
+          "$ref": "#/definitions/indicatorType"
+        },
+        "defaultIndicator": {
+          "description": "Indicates if the current value is a default (pre-selected)",
+          "$ref": "#/definitions/indicatorType"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/linkType_v02"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "booleanType": {
+      "type": "object",
+      "properties": {
+        "readOnly": {
+          "description": "True indicates that the property is marked read only in the given context",
+          "type": "boolean",
+          "default": false
+        },
+        "optional": {
+          "description": "True indicates that this property does not need to be valued",
+          "type": "boolean",
+          "default": false
+        },
+        "hidden": {
+          "description": "True indicates that the property is carried in the message - to and from the System of Record, but is not exposed in the UI",
+          "type": "boolean"
+        },
+        "sequence": {
+          "description": "A number which provides the sequence that this property should be presented in relation to other properties.",
+          "$ref": "#/definitions/sequenceType"
+        },
+        "disallow": {
+          "description": "Specified on a target property.  If the passed conditions are true then this property is disallowed and therefore, not presented to a user.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/disallowItemType"
+          }
+        },
+        "shortLabelName": {
+          "description": "Provides a client defined UI label for the property which is less than an average of 20 characters in length.",
+          "type": "string"
+        },
+        "longLabelName": {
+          "description": "Provides a client defined UI long label for the property",
+          "type": "string"
+        },
+        "default": {
+          "description": "Indicates the default value which should be populated by default",
+          "type": "boolean"
+        },
+        "equals": {
+          "description": "Provides 1 to many properties which the value of this property must be equal to.  If the property is equal to any of the value of the properties then the validation is successful.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dependencies": {
+          "$ref": "#/definitions/dependencyListType"
+        },
+        "helperMessage": {
+          "$ref": "#/definitions/helperMessageType"
+        },
+        "dataType": {
+          "description": "Data type of the attribute",
+          "type": "string",
+          "enum": [
+            "string",
+            "number",
+            "integer",
+            "boolean",
+            "object",
+            "array",
+            "null",
+            "any",
+            "string[date-time]",
+            "string[date]",
+            "string[time]",
+            "string[regex]",
+            "string[phone]",
+            "string[uri]",
+            "string[email]",
+            "string[ip-address]",
+            "string[ipv6]",
+            "string[host-name]",
+            "integer[regex]",
+            "integer[utc-millisec]",
+            "number[regex]",
+            "number[utc-millisec]"
+          ]
+        },
+        "dependencyLinks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/linkType_v02"
+          }
+        }
+      }
+    }
+  }
+}

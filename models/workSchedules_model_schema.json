@@ -1,0 +1,593 @@
+{
+  "workSchedules": [
+    {
+      "itemID": "string",
+      "scheduleID": "string",
+      "scheduleName": "string",
+      "associateOID": "string",
+      "workerName": {
+        "givenName": "string",
+        "middleName": "string",
+        "familyName1": "string",
+        "familyName2": "string",
+        "formattedName": "string"
+      },
+      "workAssignmentID": "string",
+      "clockReferenceDateTime": "2016-10-13T11:13:00.000Z",
+      "schedulePeriod": {
+        "startDate": "2016-10-13",
+        "endDate": "2016-10-13"
+      },
+      "scheduleDays": [
+        {
+          "itemID": "string",
+          "daySequenceNumber": 0,
+          "dayOfWeekCode": {
+            "codeValue": "string",
+            "shortName": "string",
+            "longName": "string"
+          },
+          "scheduleDayDate": "2016-10-13",
+          "scheduleEntries": [
+            {
+              "entryTypeCode": {
+                "codeValue": "string",
+                "shortName": "string",
+                "longName": "string"
+              },
+              "payCode": {
+                "codeValue": "string",
+                "shortName": "string",
+                "longName": "string"
+              },
+              "entryStatusCode": {
+                "codeValue": "string",
+                "shortName": "string",
+                "longName": "string",
+                "effectiveDate": "2016-10-13"
+              },
+              "dateTimePeriod": {
+                "startDateTime": "2016-10-13T11:13:00.000Z",
+                "endDateTime": "2016-10-13T11:13:00.000Z"
+              },
+              "datePeriod": {
+                "startDate": "2016-10-13",
+                "startTime": "string",
+                "endDate": "2016-10-13",
+                "endTime": "string"
+              },
+              "totalQuantity": {
+                "quantityValue": 0,
+                "unitTimeCode": {
+                  "codeValue": "string",
+                  "shortName": "string",
+                  "longName": "string"
+                }
+              },
+              "totalTime": {
+                "timeValue": "string",
+                "nameCode": {
+                  "codeValue": "string",
+                  "shortName": "string",
+                  "longName": "string"
+                }
+              },
+              "durationTypeCode": {
+                "codeValue": "string",
+                "shortName": "string",
+                "longName": "string"
+              },
+              "categoryTypeCode": {
+                "codeValue": "string",
+                "shortName": "string",
+                "longName": "string"
+              },
+              "dayPeriodCode": {
+                "codeValue": "string",
+                "shortName": "string",
+                "longName": "string"
+              },
+              "shiftTypeCode": {
+                "codeValue": "string",
+                "shortName": "string",
+                "longName": "string"
+              },
+              "duration": "string",
+              "earningAllocations": [
+                {
+                  "allocationCode": {
+                    "codeValue": "string",
+                    "shortName": "string",
+                    "longName": "string"
+                  },
+                  "allocationTypeCode": {
+                    "codeValue": "string",
+                    "shortName": "string",
+                    "longName": "string"
+                  },
+                  "itemID": "string"
+                }
+              ],
+              "entryComments": [
+                {
+                  "textValue": "string",
+                  "commentTypeCode": {
+                    "codeValue": "string",
+                    "shortName": "string",
+                    "longName": "string"
+                  },
+                  "appliesToCode": {
+                    "codeValue": "string",
+                    "shortName": "string",
+                    "longName": "string"
+                  },
+                  "privateIndicator": true,
+                  "itemID": "string"
+                }
+              ],
+              "scheduleEntryID": "string",
+              "shiftGroupID": "string",
+              "overrideWholeShiftIndicator": true,
+              "overridePartialShiftIndicator": true,
+              "actions": [
+                {
+                  "operationID": "string",
+                  "canonicalUri": "string",
+                  "actionTypeCode": "string",
+                  "confirmationRequiredIndicator": true,
+                  "commentAllowedIndicator": true,
+                  "defaultIndicator": true,
+                  "sequence": 0,
+                  "attestation": {
+                    "actionBlockIndicator": true,
+                    "messageTxt": "string",
+                    "messageUri": "string"
+                  },
+                  "links": [
+                    {
+                      "href": "string",
+                      "rel": "string",
+                      "canonicalUri": "string",
+                      "title": "string",
+                      "targetSchema": "string",
+                      "mediaType": "string",
+                      "method": "string",
+                      "encType": "string",
+                      "schema": "string",
+                      "payLoadArguments": [
+                        {
+                          "argumentPath": "string",
+                          "argumentValue": "string"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "payCodeCategory": {
+                "codeValue": "string",
+                "shortName": "string",
+                "longName": "string"
+              },
+              "entryTags": {
+                "tagCode": "string",
+                "tagType": {
+                  "dataTypeCode": "string",
+                  "currencyCode": "string",
+                  "formatCode": "string"
+                },
+                "tagValues": [
+                  "string"
+                ]
+              }
+            }
+          ],
+          "scheduledHours": {
+            "hoursQuantity": 0,
+            "unitCode": {
+              "codeValue": "string",
+              "shortName": "string",
+              "longName": "string"
+            }
+          },
+          "appliedTempateID": "string",
+          "actions": [
+            {
+              "operationID": "string",
+              "canonicalUri": "string",
+              "actionTypeCode": "string",
+              "confirmationRequiredIndicator": true,
+              "commentAllowedIndicator": true,
+              "defaultIndicator": true,
+              "sequence": 0,
+              "attestation": {
+                "actionBlockIndicator": true,
+                "messageTxt": "string",
+                "messageUri": "string"
+              },
+              "links": [
+                {
+                  "href": "string",
+                  "rel": "string",
+                  "canonicalUri": "string",
+                  "title": "string",
+                  "targetSchema": "string",
+                  "mediaType": "string",
+                  "method": "string",
+                  "encType": "string",
+                  "schema": "string",
+                  "payLoadArguments": [
+                    {
+                      "argumentPath": "string",
+                      "argumentValue": "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "scheduledHours": {
+        "hoursQuantity": 0,
+        "unitCode": {
+          "codeValue": "string",
+          "shortName": "string",
+          "longName": "string"
+        }
+      },
+      "appliedTemplateID": "string",
+      "actions": [
+        {
+          "operationID": "string",
+          "canonicalUri": "string",
+          "actionTypeCode": "string",
+          "confirmationRequiredIndicator": true,
+          "commentAllowedIndicator": true,
+          "defaultIndicator": true,
+          "sequence": 0,
+          "attestation": {
+            "actionBlockIndicator": true,
+            "messageTxt": "string",
+            "messageUri": "string"
+          },
+          "links": [
+            {
+              "href": "string",
+              "rel": "string",
+              "canonicalUri": "string",
+              "title": "string",
+              "targetSchema": "string",
+              "mediaType": "string",
+              "method": "string",
+              "encType": "string",
+              "schema": "string",
+              "payLoadArguments": [
+                {
+                  "argumentPath": "string",
+                  "argumentValue": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "href": "string",
+          "rel": "string",
+          "canonicalUri": "string",
+          "title": "string",
+          "targetSchema": "string",
+          "mediaType": "string",
+          "method": "string",
+          "encType": "string",
+          "schema": "string",
+          "payLoadArguments": [
+            {
+              "argumentPath": "string",
+              "argumentValue": "string"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "startSequence": 0,
+    "completeIndicator": true,
+    "totalNumber": 0,
+    "resourceSetID": "string",
+    "links": [
+      {
+        "href": "string",
+        "rel": "string",
+        "canonicalUri": "string",
+        "title": "string",
+        "targetSchema": "string",
+        "mediaType": "string",
+        "method": "string",
+        "encType": "string",
+        "schema": "string",
+        "payLoadArguments": [
+          {
+            "argumentPath": "string",
+            "argumentValue": "string"
+          }
+        ]
+      }
+    ]
+  },
+  "confirmMessage": {
+    "confirmMessageID": {
+      "idValue": "string",
+      "schemeName": "string",
+      "schemeAgencyName": "string"
+    },
+    "createDateTime": "2016-10-13T11:13:00.000Z",
+    "requestReceiptDateTime": "2016-10-13T11:13:00.000Z",
+    "protocolStatusCode": {
+      "codeValue": "string",
+      "shortName": "string",
+      "longName": "string"
+    },
+    "protocolCode": {
+      "codeValue": "string",
+      "shortName": "string",
+      "longName": "string"
+    },
+    "requestID": {
+      "idValue": "string",
+      "schemeName": "string",
+      "schemeAgencyName": "string"
+    },
+    "requestStatusCode": {
+      "shortName": "string",
+      "longName": "string",
+      "codeValue": "string"
+    },
+    "requestMethodCode": {
+      "shortName": "string",
+      "longName": "string",
+      "codeValue": "string"
+    },
+    "sessionID": {
+      "idValue": "string",
+      "schemeName": "string",
+      "schemeAgencyName": "string"
+    },
+    "requestETag": "string",
+    "requestLink": {
+      "href": "string",
+      "rel": "string",
+      "canonicalUri": "string",
+      "title": "string",
+      "targetSchema": "string",
+      "mediaType": "string",
+      "method": "string",
+      "encType": "string",
+      "schema": "string",
+      "payLoadArguments": [
+        {
+          "argumentPath": "string",
+          "argumentValue": "string"
+        }
+      ]
+    },
+    "processingStatusCode": {
+      "shortName": "string",
+      "longName": "string",
+      "codeValue": "string"
+    },
+    "processMessages": [
+      {
+        "processMessageID": {
+          "idValue": "string",
+          "schemeName": "string",
+          "schemeAgencyName": "string"
+        },
+        "messageTypeCode": {
+          "shortName": "string",
+          "longName": "string",
+          "codeValue": "string"
+        },
+        "sourceLocationExpression": "string",
+        "expressionLanguageCode": {
+          "shortName": "string",
+          "longName": "string",
+          "codeValue": "string"
+        },
+        "links": [
+          {
+            "href": "string",
+            "rel": "string",
+            "canonicalUri": "string",
+            "title": "string",
+            "targetSchema": "string",
+            "mediaType": "string",
+            "method": "string",
+            "encType": "string",
+            "schema": "string",
+            "payLoadArguments": [
+              {
+                "argumentPath": "string",
+                "argumentValue": "string"
+              }
+            ]
+          }
+        ],
+        "userMessage": {
+          "codeValue": "string",
+          "title": "string",
+          "messageTxt": "string",
+          "links": [
+            {
+              "href": "string",
+              "rel": "string",
+              "canonicalUri": "string",
+              "title": "string",
+              "targetSchema": "string",
+              "mediaType": "string",
+              "method": "string",
+              "encType": "string",
+              "schema": "string",
+              "payLoadArguments": [
+                {
+                  "argumentPath": "string",
+                  "argumentValue": "string"
+                }
+              ]
+            }
+          ]
+        },
+        "developerMessage": {
+          "codeValue": "string",
+          "title": "string",
+          "messageTxt": "string",
+          "links": [
+            {
+              "href": "string",
+              "rel": "string",
+              "canonicalUri": "string",
+              "title": "string",
+              "targetSchema": "string",
+              "mediaType": "string",
+              "method": "string",
+              "encType": "string",
+              "schema": "string",
+              "payLoadArguments": [
+                {
+                  "argumentPath": "string",
+                  "argumentValue": "string"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "resourceMessages": [
+      {
+        "resourceMessageID": {
+          "idValue": "string",
+          "schemeName": "string",
+          "schemeAgencyName": "string"
+        },
+        "resourceStatusCode": {
+          "shortName": "string",
+          "longName": "string",
+          "codeValue": "string"
+        },
+        "resourceLink": {
+          "href": "string",
+          "rel": "string",
+          "canonicalUri": "string",
+          "title": "string",
+          "targetSchema": "string",
+          "mediaType": "string",
+          "method": "string",
+          "encType": "string",
+          "schema": "string",
+          "payLoadArguments": [
+            {
+              "argumentPath": "string",
+              "argumentValue": "string"
+            }
+          ]
+        },
+        "processMessages": [
+          {
+            "processMessageID": {
+              "idValue": "string",
+              "schemeName": "string",
+              "schemeAgencyName": "string"
+            },
+            "messageTypeCode": {
+              "shortName": "string",
+              "longName": "string",
+              "codeValue": "string"
+            },
+            "sourceLocationExpression": "string",
+            "expressionLanguageCode": {
+              "shortName": "string",
+              "longName": "string",
+              "codeValue": "string"
+            },
+            "links": [
+              {
+                "href": "string",
+                "rel": "string",
+                "canonicalUri": "string",
+                "title": "string",
+                "targetSchema": "string",
+                "mediaType": "string",
+                "method": "string",
+                "encType": "string",
+                "schema": "string",
+                "payLoadArguments": [
+                  {
+                    "argumentPath": "string",
+                    "argumentValue": "string"
+                  }
+                ]
+              }
+            ],
+            "userMessage": {
+              "codeValue": "string",
+              "title": "string",
+              "messageTxt": "string",
+              "links": [
+                {
+                  "href": "string",
+                  "rel": "string",
+                  "canonicalUri": "string",
+                  "title": "string",
+                  "targetSchema": "string",
+                  "mediaType": "string",
+                  "method": "string",
+                  "encType": "string",
+                  "schema": "string",
+                  "payLoadArguments": [
+                    {
+                      "argumentPath": "string",
+                      "argumentValue": "string"
+                    }
+                  ]
+                }
+              ]
+            },
+            "developerMessage": {
+              "codeValue": "string",
+              "title": "string",
+              "messageTxt": "string",
+              "links": [
+                {
+                  "href": "string",
+                  "rel": "string",
+                  "canonicalUri": "string",
+                  "title": "string",
+                  "targetSchema": "string",
+                  "mediaType": "string",
+                  "method": "string",
+                  "encType": "string",
+                  "schema": "string",
+                  "payLoadArguments": [
+                    {
+                      "argumentPath": "string",
+                      "argumentValue": "string"
+                    }
+                  ]
+                }
+              ]
+            },
+            "resourceStatusCode": {
+              "codeValue": "string",
+              "shortName": "string",
+              "longName": "string"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
