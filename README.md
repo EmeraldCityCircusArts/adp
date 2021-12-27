@@ -10,7 +10,7 @@ Based on ADP API documentation available at [ADP API Explorer](https://developer
 ## Installation
 
 ```bash
-$ go get -d github.com/EmeraldCityCircusArts/adp@main
+$ go get -d github.com/EmeraldCityCircusArts/adp@v1
 ```
 
 ## Quick Start
