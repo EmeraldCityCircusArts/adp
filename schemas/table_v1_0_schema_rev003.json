@@ -1,0 +1,104 @@
+{
+    "$schema": "http://json-schema.org/draft-02/schema#",
+    "type": "object",
+    "properties": {
+        "table": {
+            "description": "table",
+            "id": "table",
+            "type": "object",
+            "optional": true,
+            "properties": {
+                "tableName": {
+                    "description": "Table Name",
+                    "type": "string",
+                    "optional": true
+                },
+                "header": {
+                    "description": "Header Record.  Provides the metadata of a table.  This includes the columns",
+                    "type": "object",
+                    "optional": true,
+                    "properties": {
+                        "numberOfColumns": {
+                            "type": "number"
+                        },
+                        "titleName": {
+                            "description": "Table Title Name",
+                            "type": "string",
+                            "optional": true
+                        },
+                        "formatTypeCodes": {
+                            "description": "A code indicating the formatting to apply to the row.  For example, a heading row would be bold.",
+                            "type": "array",
+                            "optional": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "normal",
+                                    "bold",
+                                    "fill"
+                                ]
+                            }
+                        },
+                        "columns": {
+                            "type": "array",
+                            "description": "The names of the columns in the table.  The order in the array is the implied order of the columns from left to right.",
+                            "items": {
+                                "type": "object",
+                                "optional": true,
+                                "properties": {
+                                    "columnName": {
+                                        "type": "string"
+                                    },
+                                    "primarykeyIndicator": {
+                                        "description": "Indicaites whether the column should be considered a primary key",
+                                        "type": "boolean",
+                                        "optional": true,
+                                        "default": false
+                                    },
+                                    "userVisibleIndicator": {
+                                        "description": "Indicaites whether the column should be visible to the user or whether it is only used by the syste,",
+                                        "type": "boolean",
+                                        "optional": true,
+                                        "default": false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tableRows": {
+                    "description": "A row in the table",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "formatTypeCodes": {
+                                "description": "A code indicating the formatting to apply to the row.  For example, a heading row would be bold.",
+                                "type": "array",
+                                "optional": true,
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "normal",
+                                        "bold",
+                                        "fill"
+                                    ]
+                                }
+                            },
+                            "columnValues": {
+                                "type": "array",
+                                "description": "Value of the column.  The order in the array is the order of the columns in the row.",
+                                "items": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
