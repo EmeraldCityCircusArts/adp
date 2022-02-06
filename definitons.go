@@ -19,6 +19,11 @@ type ActionType_v02 struct {
 // description": "A unique identifier of a worker the schedule is related to",
 type AssociateOIDType_v02 SimpleIDType_v02
 
+// String returns the AssociateOIDType_v02 formatted using the format string
+func (a AssociateOIDType_v02) String() string {
+	return string(a)
+}
+
 type CodeListItemType_v02 struct {
 	CodeValue         string `json:"codeValue,omitempty"`
 	DefaultIndicator  bool   `json:"defaultIndicator,omitempty"`
