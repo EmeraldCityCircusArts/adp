@@ -7,6 +7,11 @@ type Mobile GenericTelephoneNumber
 // "description": "The URI of the associated email address",
 type EmailUri string
 
+// String returns the EmailUri formatted using the format string
+func (e EmailUri) String() string {
+	return string(e)
+}
+
 // "description": "A list of email addresses",
 type Email struct {
 	EmailUri              `json:"emailUri,omitempty"`
