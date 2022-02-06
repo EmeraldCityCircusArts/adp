@@ -1,41 +1,5 @@
 package adp
 
-import "time"
-
-// "description": "The string reprersentation of the date-time value. Follows the ISO-8601:2000 format: 2008-05-11T15:30:00-06:00."
-type DateTimeType_v01 string
-
-// String returns the DateTimeType_v01 formatted using the format string
-func (d DateTimeType_v01) String() string {
-	return string(d)
-}
-
-// Time parses a DateTimeType_v01 and returns the time value it represents.
-func (d DateTimeType_v01) Time() (t time.Time) {
-	t, err := time.Parse("2006-01-02T15:04:05-07:00", string(d))
-	if err != nil {
-		panic(err)
-	}
-	return
-}
-
-// "description": "The string representation of the date value. Follows the ISO-8601:2000 format: 2008-05-11",
-type DateType_v01 string
-
-// String returns the DateType_v01 formatted using the format string
-func (d DateType_v01) String() string {
-	return string(d)
-}
-
-// Time parses a DateType_v01 and returns the time value it represents.
-func (d DateType_v01) Time() (t time.Time) {
-	t, err := time.Parse("2006-01-02", string(d))
-	if err != nil {
-		panic(err)
-	}
-	return
-}
-
 type GenericAddress struct {
 	AttentionOfName          string                     `json:"attentionOfName,omitempty"`
 	BlockName                string                     `json:"blockName,omitempty"`

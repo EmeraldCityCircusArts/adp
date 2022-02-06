@@ -3,6 +3,8 @@
 // https://developers.adp.com/articles/api/all/apiexplorer
 package adp
 
+import "time"
+
 // "description": "Actions which the user is allowed to initiate against the related entity",
 type ActionType_v02 struct {
 	ActionTypeCode                string `json:"actionTypeCode,omitempty"`
@@ -121,6 +123,40 @@ type CountrySubdivisionType_v02 struct {
 type DatePeriodType_v01 struct {
 	EndDate   DateType_v01 `json:"endDate,omitempty"`
 	StartDate DateType_v01 `json:"startDate,omitempty"`
+}
+
+// "description": "The string reprersentation of the date-time value. Follows the ISO-8601:2000 format: 2008-05-11T15:30:00-06:00."
+type DateTimeType_v01 string
+
+// String returns the DateTimeType_v01 formatted using the format string
+func (d DateTimeType_v01) String() string {
+	return string(d)
+}
+
+// Time parses a DateTimeType_v01 and returns the time value it represents.
+func (d DateTimeType_v01) Time() (t time.Time) {
+	t, err := time.Parse("2006-01-02T15:04:05-07:00", string(d))
+	if err != nil {
+		panic(err)
+	}
+	return
+}
+
+// "description": "The string representation of the date value. Follows the ISO-8601:2000 format: 2008-05-11",
+type DateType_v01 string
+
+// String returns the DateType_v01 formatted using the format string
+func (d DateType_v01) String() string {
+	return string(d)
+}
+
+// Time parses a DateType_v01 and returns the time value it represents.
+func (d DateType_v01) Time() (t time.Time) {
+	t, err := time.Parse("2006-01-02", string(d))
+	if err != nil {
+		panic(err)
+	}
+	return
 }
 
 // "description": "Represents the duration of time as represented by ISO 8601. Where the value space is a six dimensional space where the coordinates designate the Gregorian year, month, day, hour, minute, and second. The number of seconds can include decimal digits to arbitary pecision. PnYn MnDTnH nMnS, where: [n] is replaced by the value for each of the date and time elements that follow the [n]. Leading zeros are not required, but the maximum number of digits for each element should be agreed to by the communicating parties. The capital letters 'P', 'Y', 'M', 'W', 'D', 'T', 'H', 'M', and 'S' are designators for each of the date and time elements and are not replaced. P is the duration designator (historically called 'period') placed at the start of the duration representation. Y is the year designator that follows the value for the number of years. M is the month designator that follows the value for the number of months. D is the day designator that follows the value for the number of days. T is the time designator that precedes the time components of the representation. H is the hour designator that follows the value for the number of hours. M is the minute designator that follows the value for the number of minutes. S is the second designator that follows the value for the number of seconds. The number of seconds can include decimal digits to arbitrary precision",
