@@ -19,6 +19,24 @@ type ActionType_v02 struct {
 // description": "A unique identifier of a worker the schedule is related to",
 type AssociateOIDType_v02 SimpleIDType_v02
 
+type CodeListItemType_v02 struct {
+	CodeValue         string `json:"codeValue,omitempty"`
+	DefaultIndicator  bool   `json:"defaultIndicator,omitempty"`
+	ForeignKey        string `json:"foreignKey,omitempty"`
+	InactiveIndicator bool   `json:"inactiveIndicator,omitempty"`
+	ItemID            string `json:"itemID,omitempty"`
+	LongName          string `json:"longName,omitempty"`
+	ShortName         string `json:"shortName,omitempty"`
+	ValueDescription  string `json:"valueDescription,omitempty"`
+}
+
+type CodeListType_v03 struct {
+	CodeListTitle      string                 `json:"codeListTitle,omitempty"`
+	ExclusiveIndicator bool                   `json:"exclusiveIndicator,omitempty"`
+	Links              []LinkType_v02         `json:"links,omitempty"`
+	ListItems          []CodeListItemType_v02 `json:"listItems,omitempty"`
+}
+
 // "description": "The code for the related entity",
 type CodeType_v01 struct {
 	GenericCode
