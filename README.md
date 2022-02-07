@@ -1,6 +1,6 @@
 # adp
 
-[![Go Reference](https://pkg.go.dev/badge/EmeraldCityCircusArts/adp.svg)](https://pkg.go.dev/EmeraldCityCircusArts/adp)
+[![Go Reference](https://pkg.go.dev/badge/EmeraldCityCircusArts/adp.svg)](https://pkg.go.dev/github.com/EmeraldCityCircusArts/adp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Package adp implements a simple Golang library for working with the adp.com API.
