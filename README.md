@@ -30,11 +30,8 @@ Schema and model file source locations:
 - [workers](https://developers.adp.com/articles/api/workers-v2-api)
 - [workSchedules](https://developers.adp.com/articles/api/work-schedules-v1-api)
 
-## Table usage
-https://developers.adp.com/articles/preview/guide-validation-table-code-list-api-guide-for-adp-workforce-now-8?chapter=3
-
-For example, the specific codelist URL for workSchedules Departments can be retrieved from workSchedulesMeta
-
+## Code List usage
+https://developers.adp.com/articles/guides/validation-table-code-list-api-guide-for-adp-workforce-now/
 
 ## License
 
